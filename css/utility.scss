@@ -1,0 +1,288 @@
+/* DISPLAY */
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+/* ALIGNMENT */
+.block-center {
+    margin: 0 auto;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* FLOATS */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* BOX & TEXT SHADOW */
+.text-shadow-dark {
+    text-shadow: 1px 1px 1px #444;
+}
+
+.text-shadow-light {
+    text-shadow: 1px 1px 1px #C4C4C4;
+}
+
+.box-shadow {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.20);
+}
+
+.box-shadow-down {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.20);
+}
+
+.box-shadow-up {
+    box-shadow: 0 -3px 8px 0 rgba(0,0,0,0.20);
+}
+
+.box-shadow-right {
+    box-shadow: 3px 2px 8px 0 rgba(0,0,0,0.20);
+}
+
+.box-shadow-left {
+    box-shadow: -3px 2px 8px 0 rgba(0,0,0,0.20);
+}
+
+/* GRID (apply .no-gutter to .row) */
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+/* LISTS */
+.inline-list {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.inline-list > li {
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+/* HIDE-SHOW */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.opacity-zero {
+    opacity: 0 !important;
+}
+
+.opacity-one {
+    opacity: 1 !important;
+}
+
+.blur {
+    filter: blur(2px);
+}
+
+.clearfix {
+    clear: both;
+}
+
+.clear-right {
+    clear: right;
+}
+
+.clear-left {
+    clear: left;
+}
+
+/* MODAL */
+/* Requires JavaScript in 'js/lib/utility/Modal.js' */
+.modal-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    background-color: white;
+    border-radius: 3px;
+    padding: 1em;
+    box-shadow: 0px 1px 6px -1px rgba(119,119,119,1);
+    display: none;
+    opacity: 0.5;
+}
+
+.modal-enter {
+    opacity: 0.5;
+    display: block;
+    opacity: 1;
+    animation: modalEnter 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes modalEnter {
+    to {
+        transform: translate(-50%, -60%);
+        opacity: 1;
+    }
+}
+
+/* TOOLTIP */
+/* Requires JavaScript in 'js/lib/utility/Tooltip.js' */
+.tooltip {
+    display: inline-block;
+    position: relative;
+}
+
+.tooltip-wrap {
+    z-index: 100;
+    background-color: $gray-1;
+    font-size: .8em;
+    border-radius: 3px;
+    padding: .5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    box-shadow: 0px 1px 4px -1px rgba(119,119,119,0.4);
+    text-align: center;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid $gray-1;
+    position: absolute;
+}
+
+.tooltip-enter {
+    visibility: visible;
+    opacity: 0.5;
+    animation: tooltipEnter 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes tooltipEnter {
+    to {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* LOADING */
+/* Requires JavaScript in 'js/lib/utility/ProgressBar.js' */
+.loading-progress {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 15px;
+    background-color: $dill-1;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 5px 0px rgba(119,119,119,1);
+    overflow: hidden;
+}
+
+.progress-node {
+    height: inherit;
+    display: inherit;
+    border-radius: 20px 0 0 20px;
+    width: 0%;
+    background-color: $primary-2;
+    transition: width 0.5s ease-out;
+}
+
+.progress-text {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    color: white;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.loading-pulse {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: $dill-1;
+    animation-delay: 0.2s;
+    animation: loadingLoopOuter 0.8s infinite;
+    animation-timing-function: ease-in-out;
+
+    &::after {
+        content: '';
+        animation: loadingLoopInner 0.8s infinite;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0.2s;
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        background-color: $primary-2;
+    }
+}
+
+@keyframes loadingLoopOuter {
+  0% {
+    transform: scale3d(0.5, 0.5, 0.5);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale3d(0.5, 0.5, 0.5);
+    opacity: 0.8;
+  }
+}
+
+@keyframes loadingLoopInner {
+  0% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale3d(0.1, 0.1, 0.1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}

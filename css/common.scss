@@ -1,0 +1,160 @@
+/* COMMON SASS STYLESHEET: AUSTIN GEBAUER */
+@import './colors.scss';
+@import './fonts/fonts.scss';
+@import './vendor/reset.scss';
+@import './utility.scss';
+@import './vendor/grid.min.css';
+
+/* CUSTOM STYLES */
+body {
+  font-family: $fs-source-sans-pro;
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray-5;
+  margin: 0;
+  background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fs-source-sans-pro;
+  margin: 0.8em 0 0.2em 0;
+}
+
+a {
+  text-decoration: none !important;
+  color: $links;
+  transition: color 0.3s;
+
+  &:visited {
+    color: $links;
+  }
+
+  &:hover {
+    color: $links-hover;
+  }
+}
+
+ul, ol {
+  margin: 1em 0;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  padding: 0.5em;
+  background-color: $accent-2;
+  color: $gray-1;
+  transition: color 0.3s, background-color 0.3s;
+  
+  &:hover {
+    background-color: $accent-1;
+    color: white;
+  }
+}
+
+header {
+    nav {
+
+    }
+}
+
+footer {
+  
+}
+
+
+/* MEDIA QUERIES */
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+}
+
+/* KEYFRAMES */
+.way-in {
+  animation: animateIn 0.4s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+}
+
+@keyframes animateIn {
+  from {
+      transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0px);
+      opacity: 1;
+  }
+}
+
+/* BETTER BOX SIZING */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* TEXT SELECTION */
+::selection {
+  background: $gray-2;
+  color: white;
+}
+
+::-webkit-selection {
+  background: $gray-2;
+  color: white;
+}
+
+::-moz-selection {
+  background: $gray-2;
+  color: white;
+}
+
+/* NO OUTLINE MY FOCUS PLZ */ 
+*:focus {
+  outline: 0; 
+}
+
+/* PLACEHOLDER TEXT COLOR */
+::-webkit-input-placeholder {
+  color: $gray-4;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: $gray-4;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: $gray-4;  
+}
+
+:-ms-input-placeholder {  
+  color: $gray-4;  
+}
+
+/* FONTS */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic,900italic);
+/*@font-face {
+    font-family: 'League Gothic';
+    src: url('../../fonts/leaguegothic-regular-webfont.eot');
+    src: url('../../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../../fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
+         url('../../fonts/leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
