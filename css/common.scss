@@ -19,7 +19,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $fs-source-sans-pro;
   margin: 0.8em 0 0.2em 0;
 }
-
+p{
+    margin: 10px
+}
 a {
   text-decoration: none !important;
   color: $links;
